@@ -1,6 +1,6 @@
 ---@class Module
 ---@field name string
----@field providers? Provider[] | table[] -- Any here is just for stop err message. EmmyDoc is very limited
+---@field providers? Provider[] | table[]
 ---@field modules? Module[]
 
 ---@param definition Module

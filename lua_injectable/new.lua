@@ -1,4 +1,5 @@
-local registry = require 'registry'
+local registry = require 'lua_injectable.registry'
+local scopes = require 'lua_injectable.scopes'
 
 ---@class New
 ---@field _current_provider_name string
@@ -30,11 +31,11 @@ function Resolve:new()
                 if type(value) == 'table' and value.__is_injectable then
                     local provider = value --[[ @as Provider ]]
 
-                    if provider.__scope == 'singleton' then
+                    if provider.__scope == scopes.singleton then
                         self:_resolve_scope_singleton(key, instance, provider)
                     end
 
-                    if provider.__scope == 'transient' then
+                    if provider.__scope == scopes.injection then
                         self:_resolve_scope_injection(key, instance, provider)
                     end
                 end

@@ -1,4 +1,4 @@
-local scopes = require 'scopes'
+local scopes = require 'lua_injectable.scopes'
 
 ---@class Provider
 ---@field __name string

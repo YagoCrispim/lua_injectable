@@ -1,5 +1,5 @@
-local registry = require 'registry'
-local scopes = require 'scopes'
+local registry = require 'lua_injectable.registry'
+local scopes = require 'lua_injectable.scopes'
 
 local RootModule = {}
 RootModule.__index = RootModule
@@ -19,7 +19,7 @@ function RootModule:new(root_module)
 
     return {
         start = function(cb)
-            print('\n--- Starting app ---\n')
+            print('\n--- Starting Cheese app ---\n')
             cb()
         end
     }
